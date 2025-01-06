@@ -17,19 +17,6 @@ export default {
     },
     extend: {
       colors: {
-        zest: {
-          50: "#fdf8ef",
-          100: "#fbefd9",
-          200: "#f6dbb2",
-          300: "#f0c281",
-          400: "#e9a04e",
-          500: "#e68f3d",
-          600: "#d56d21",
-          700: "#b1531d",
-          800: "#8d421f",
-          900: "#72381c",
-          950: "#3d1b0d",
-        },
         "purple-heart": {
           50: "#eeefff",
           100: "#e0e2ff",
