@@ -21,6 +21,11 @@ jobs:
           node-version: 20
           cache: 'npm'
 
+      - name: clean npm cache
+        run: npm cache clean --force
+        run: npm install -g npm@latest
+        run: npm verify
+
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm ci
@@ -31,7 +36,7 @@ jobs:
 
       # Step 4: Build the project
       - name: Build the project
-        run: npm run build
+        run: npm run 
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
