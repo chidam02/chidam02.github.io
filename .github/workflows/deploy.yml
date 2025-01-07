@@ -25,6 +25,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Debug npm logs
+        run: cat /home/runner/.npm/_logs/*.log
+
+
       # Step 4: Build the project
       - name: Build the project
         run: npm run build
