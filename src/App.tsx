@@ -830,6 +830,7 @@ function App() {
             </a>
             </div>
           </div>
+          <div></div>
           <p className="inline">Developed by <span className="font-bold">Chidam,</span></p>
           <span className="inline-flex gap-1 items-center ml-1">
             <span>Built with</span>
