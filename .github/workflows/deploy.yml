@@ -10,26 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '18'
           cache: 'npm'
 
-      - name: clean npm cache
-        run: npm cache clean --force && npm cache verify
+      - name: Clean npm cache
+        run: npm cache clean --force
 
-      # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm ci
-
-      - name: Debug npm logs
-        run: cat /home/runner/.npm/_logs/*.log
+        run: npm install --no-audit --no-fund --legacy-peer-deps
 
 
       # Step 4: Build the project
