@@ -22,7 +22,7 @@ jobs:
           cache: 'npm'
 
       - name: clean npm cache
-        run: npm cache clean --force && npm verify
+        run: npm cache clean --force && npm cache verify
 
       # Step 3: Install dependencies
       - name: Install dependencies
