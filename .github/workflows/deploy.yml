@@ -22,9 +22,7 @@ jobs:
           cache: 'npm'
 
       - name: clean npm cache
-        run: npm cache clean --force
-        run: npm install -g npm@latest
-        run: npm verify
+        run: npm cache clean --force && npm verify
 
       # Step 3: Install dependencies
       - name: Install dependencies
