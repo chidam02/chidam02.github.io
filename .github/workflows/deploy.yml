@@ -23,7 +23,7 @@ jobs:
 
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Debug npm logs
         run: cat /home/runner/.npm/_logs/*.log
