@@ -17,24 +17,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-      - name: Clean npm cache
-        run: npm cache clean --force
+          cache: 'npm'
 
       - name: Install dependencies with npm ci
-        run: |
-          npm ci --no-audit --no-fund || (echo "npm error occurred" && mkdir -p logs && cp /home/runner/.npm/_logs/*.log logs/)
-
-      - name: Upload npm logs
-        uses: actions/upload-artifact@v3
-        with:
-          name: npm-logs
-          path: /home/runner/.npm/_logs/*.log
+        run: npm run ci
 
       - name: Build the project
         run: npm run build
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
