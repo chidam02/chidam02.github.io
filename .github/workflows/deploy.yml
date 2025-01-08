@@ -26,7 +26,6 @@ jobs:
           npm ci --no-audit --no-fund || (echo "npm error occurred" && mkdir -p logs && cp /home/runner/.npm/_logs/*.log logs/)
 
       - name: Upload npm logs
-        if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: npm-logs
