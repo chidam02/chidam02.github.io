@@ -849,7 +849,7 @@ function App() {
       </section>
 
 
-      {/* FOOTER - hanging different ways to connect*/}
+      {/* FOOTER - hanging in left and right - different ways to connect*/}
       <div className="fixed bottom-0 left-3 hidden flex-col gap-3 lg:inline-flex">
 
         <div>
