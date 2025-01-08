@@ -18,9 +18,19 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Clean npm cache
+        run: npm cache clean --force
 
+      - name: Install dependencies with npm ci
+        run: |
+          npm ci --no-audit --no-fund || (echo "npm error occurred" && mkdir -p logs && cp /home/runner/.npm/_logs/*.log logs/)
+
+      - name: Upload npm logs
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: npm-logs
+          path: logs/
 
       - name: Build the project
         run: npm run build
