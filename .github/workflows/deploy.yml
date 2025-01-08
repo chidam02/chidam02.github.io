@@ -25,6 +25,8 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      # repo settings > code and automation > Actions > General > Workflow permissions
+      # select read and write permissions so that -u "github-actions-bot.." can push to the repo
       - name: Deploy to GitHub Pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
